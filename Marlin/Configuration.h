@@ -133,7 +133,7 @@
 #endif
 
 // Nome exibido na mensagem "Pronto" do LCD e no menu Informações
-#define CUSTOM_MACHINE_NAME "AG-Z9"
+#define CUSTOM_MACHINE_NAME "AG-Z9M3"
 
 // ID exclusivo da impressora, usado por alguns programas para diferenciar as máquinas.
 // Escolha o seu próprio ou use um serviço como https://www.uuidgenerator.net/version4
