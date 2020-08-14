@@ -98,25 +98,6 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
                                                                        ICSP1                                   
 **/
 
-
-  //
-  // Software serial
-  //
-/*
-  #ifndef TXD0
-    #define TXD0                  1
-  #endif
-  #ifndef RXD0
-    #define X_SERIAL_RX_PIN                   0
-  #endif
-  #ifndef X2_SERIAL_TX_PIN
-    #define X2_SERIAL_TX_PIN                  -1
-  #endif
-  #ifndef X2_SERIAL_RX_PIN
-    #define X2_SERIAL_RX_PIN                  -1
-  #endif
-
-*/
 //=========================================================================================================//
 //	                             Hardware serial communication ports.                                   //
 //=========================================================================================================//
