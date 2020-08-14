@@ -129,7 +129,7 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 //=========================================================================================================//
 
 #ifndef Z_MIN_PROBE_PIN
-  #define Z_MIN_PROBE_PIN                                           19 //Z_MAX_PIN        
+  #define Z_MIN_PROBE_PIN                                            19  //Z_MAX_PIN        
 #endif
 
 //=========================================================================================================//
@@ -197,9 +197,9 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 //	                                        Temperature Sensors                                            //
 //=========================================================================================================//
 
-#define TEMP_0_PIN                                                   13 // Analog Input
-#define TEMP_BED_PIN                                                 14 // Analog Input
-#define TEMP_1_PIN                                                   15 // Analog Input
+#define TEMP_0_PIN                                                   13  // Analog Input
+#define TEMP_BED_PIN                                                 14  // Analog Input
+#define TEMP_1_PIN                                                   15  // Analog Input
 
 //=========================================================================================================//
 //	                                             Heaters / Fans                                            //
@@ -212,7 +212,7 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 #if ENABLED(USE_DUAL_HEATBED_PINS)
 #error "HEATER_1_PIN has been repeated distribution for ZRIB V6!!"
 #endif
-#define FAN_PIN                                                      9 //Laser PWM
+#define FAN_PIN                                                      9  //Laser PWM
 #define FAN1_PIN                                                     6
 
 //=========================================================================================================//
@@ -227,7 +227,7 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 //	                                   Filament run out detection                                          //
 //=========================================================================================================//
 
-#define FILWIDTH_PIN                                                 -1 //Analog Input
+#define FILWIDTH_PIN                                                 -1  //Analog Input
 #if ENABLED(Z_DUAL_STEPPER_DRIVERS)
 #define FIL_RUNOUT_PIN E1_SW_PIN
 #define FIL_RUNOUT2_PIN X_MAX_PIN
@@ -246,10 +246,10 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 //	                                                  Servos                                               //
 //=========================================================================================================//
 
-#define SERVO0_PIN                                                   4  //XS1(AUX3) Pin1
-#define SERVO1_PIN                                                   -1 //XS1(AUX3) Pin3
-#define SERVO2_PIN                                                   5  //XS1(AUX3) Pin5
-#define SERVO3_PIN                                                   11 //XS1(AUX3) Pin7
+#define SERVO0_PIN                                                   4   //XS1(AUX3) Pin1
+#define SERVO1_PIN                                                   -1  //XS1(AUX3) Pin3
+#define SERVO2_PIN                                                   5   //XS1(AUX3) Pin5
+#define SERVO3_PIN                                                   11  //XS1(AUX3) Pin7
 
 //=========================================================================================================//
 //	                                           Spindle & Laser contro                                      //
@@ -268,37 +268,36 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 
 #if ENABLED(ZONESTAR_12864LCD)
 #define LCDSCREEN_NAME                                               "ZONESTAR LCD12864"
-#define LCD_SDSS                                                     16
-#define LCD_PINS_RS                                                  RXD1  // pin 16 ST7920_CS_PIN	LCD_PIN_RS 		(PIN4 of LCD module)
-#define LCD_PINS_ENABLE                                              23 // ST7920_DAT_PIN	LCD_PIN_R/W		(PIN5 of LCD module)
-
-#define LCD_PINS_D4                                                  TXD1 // pin 17 ST7920_CLK_PIN	LCD_PIN_ENABLE	(PIN6 of LCD module)
+#define LCD_SDSS                                                     RXD1
+#define LCD_PINS_RS                                                  RXD1  //ST7920_CS_PIN	 LCD_PIN_RS     
+#define LCD_PINS_ENABLE                                              23    //ST7920_DAT_PIN	 LCD_PIN_ENABLE
+#define LCD_PINS_D4                                                  TXD1  //ST7920_CLK_PIN	 LCD_PIN_R/W   
 // Alter timing for graphical display
-#define BOARD_ST7920_DELAY_1                                         DELAY_NS(96)
-#define BOARD_ST7920_DELAY_2                                         DELAY_NS(48)
-#define BOARD_ST7920_DELAY_3                                         DELAY_NS(600)
+//#define BOARD_ST7920_DELAY_1                                         DELAY_NS(96)
+//#define BOARD_ST7920_DELAY_2                                         DELAY_NS(48)
+//#define BOARD_ST7920_DELAY_3                                         DELAY_NS(600)
 #endif
 
 #if ENABLED(REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER)
 #define LCDSCREEN_NAME                                               "Reprap LCD12864"
 //USE EXP1 & EXP2 CONNECTOR
-#define LCD_PINS_RS                                                  RXD1 // ST7920_CS_PIN	LCD_PIN_RS
-#define LCD_PINS_ENABLE                                              23 //ST7920_DAT_PIN	LCD_PIN_ENABLE
-#define LCD_PINS_D4                                                  TXD1 //ST7920_CLK_PIN	LCD_PIN_R/W
+#define LCD_PINS_RS                                                  RXD1  //ST7920_CS_PIN	 LCD_PIN_RS
+#define LCD_PINS_ENABLE                                              TXD1  //ST7920_DAT_PIN	 LCD_PIN_ENABLE
+#define LCD_PINS_D4                                                  23    //ST7920_CLK_PIN	 LCD_PIN_R/W
 // Alter timing for graphical display 
-#define BOARD_ST7920_DELAY_1                                         DELAY_NS(96)
-#define BOARD_ST7920_DELAY_2                                         DELAY_NS(48)
-#define BOARD_ST7920_DELAY_3                                         DELAY_NS(600)
+//#define BOARD_ST7920_DELAY_1                                         DELAY_NS(96)
+//#define BOARD_ST7920_DELAY_2                                         DELAY_NS(48)
+//#define BOARD_ST7920_DELAY_3                                         DELAY_NS(600)
 #endif
 #if ENABLED(CR10_STOCKDISPLAY)
 #define LCDSCREEN_NAME                                               "CR10 LCD12864"
-#define LCD_PINS_RS                                                  RXD1 //CS -- SOFT SPI for ENDER3 LCD
-#define LCD_PINS_ENABLE                                              23 //SCLK
-#define LCD_PINS_D4                                                  TXD1 //DATA MOSI
+#define LCD_PINS_RS                                                  RXD1  //ST7920_CS_PIN	 LCD_PIN_RS      
+#define LCD_PINS_ENABLE                                              23    //ST7920_DAT_PIN	 LCD_PIN_ENABLE
+#define LCD_PINS_D4                                                  TXD1  //ST7920_CLK_PIN	 LCD_PIN_R/W    
 // Alter timing for graphical display
-#define BOARD_ST7920_DELAY_1                                         DELAY_NS(96)
-#define BOARD_ST7920_DELAY_2                                         DELAY_NS(48)
-#define BOARD_ST7920_DELAY_3                                         DELAY_NS(600)
+//#define BOARD_ST7920_DELAY_1                                         DELAY_NS(96)
+//#define BOARD_ST7920_DELAY_2                                         DELAY_NS(48)
+//#define BOARD_ST7920_DELAY_3                                         DELAY_NS(600)
 #endif
 
 #if ENABLED(MKS_MINI_12864)
@@ -313,9 +312,9 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 #if ENABLED(ZONESTAR_OLED12864)
 #define LCDSCREEN_NAME                                               "ZONESTAR OLED12864"
 #define LCD_SDSS                                                     RXD1
-#define LCD_PINS_RS                                                  23 //RESET Pull low for 1s to init
-#define LCD_PINS_DC                                                  TXD1 //
-#define DOGLCD_CS                                                    16 //CS
+#define LCD_PINS_RS                                                  23    //RESET Pull low for 1s to init
+#define LCD_PINS_DC                                                  TXD1  //
+#define DOGLCD_CS                                                    RXD1  //CS
 #if ENABLED(OLED_HW_IIC)
 //IIC
 #error "Oops!  must choose SW SPI for ZRIB board and connect the OLED screen to EXP1 connector"
@@ -324,9 +323,9 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 #error "Oops!  must choose SW SPI for ZRIB board and connect the OLED screen to EXP1 connector"
 #else
 //SW_SPI
-#define DOGLCD_A0 LCD_PINS_DC                                           //DC
-#define DOGLCD_MOSI                                                  35 //SDA
-#define DOGLCD_SCK                                                   37 //SCK
+#define DOGLCD_A0 LCD_PINS_DC                                            //DC
+#define DOGLCD_MOSI                                                  35  //SDA
+#define DOGLCD_SCK                                                   37  //SCK
 #endif
 #endif //OLED 128x64
 
@@ -349,7 +348,7 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 //=========================================================================================================//
 
 #if ENABLED(ZONESTAR_LCD2004_ADCKEY)
-#define ADC_KEYPAD_PIN                                               10 //A10 for ADCKEY
+#define ADC_KEYPAD_PIN                                               10  //A10 for ADCKEY
 #undef LCDSCREEN_NAME
 #define LCDSCREEN_NAME                                               "LCD2004 ADCKEY"
 #endif
@@ -396,16 +395,16 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 #undef TEMP_0_PIN
 #undef TEMP_BED_PIN
 #undef TEMP_1_PIN
-#define TEMP_0_PIN                                                   15 // Analog Input
-#define TEMP_BED_PIN                                                 14 // Analog Input
-#define TEMP_1_PIN                                                   13 // Analog Input
+#define TEMP_0_PIN                                                   15  // Analog Input
+#define TEMP_BED_PIN                                                 14  // Analog Input
+#define TEMP_1_PIN                                                   13  // Analog Input
 #elif ENABLED(SWAP_E1T_BEDT)
 #undef TEMP_0_PIN
 #undef TEMP_BED_PIN
 #undef TEMP_1_PIN
-#define TEMP_0_PIN                                                   13 // Analog Input
-#define TEMP_BED_PIN                                                 15 // Analog Inpu
-#define TEMP_1_PIN                                                   14 // Analog Input
+#define TEMP_0_PIN                                                   13  // Analog Input
+#define TEMP_BED_PIN                                                 15  // Analog Inpu
+#define TEMP_1_PIN                                                   14  // Analog Input
 #endif
 #if ENABLED(SWAP_XP_ZN)
 #undef X_MAX_PIN
