@@ -90,10 +90,10 @@
 #define SHOW_BOOTSCREEN
 
 // Mostre o bitmap em Marlin /_Bootscreen.h na inicialização.
-#define SHOW_CUSTOM_BOOTSCREEN
+//#define SHOW_CUSTOM_BOOTSCREEN
 
 // Mostre o bitmap em Marlin /_Statusscreen.h na tela de status.
-#define CUSTOM_STATUS_SCREEN_IMAGE
+//#define CUSTOM_STATUS_SCREEN_IMAGE
 
 // @section machine
 
@@ -133,7 +133,7 @@
 #endif
 
 // Nome exibido na mensagem "Pronto" do LCD e no menu Informações
-#define CUSTOM_MACHINE_NAME "AG-Z9M3"
+#define CUSTOM_MACHINE_NAME "AG-Z9"
 
 // ID exclusivo da impressora, usado por alguns programas para diferenciar as máquinas.
 // Escolha o seu próprio ou use um serviço como https://www.uuidgenerator.net/version4
@@ -584,7 +584,7 @@
  * Observação: para extrusoras Bowden, faça com que seja grande o suficiente para permitir a carga / descarga.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 200
+#define EXTRUDE_MAXLENGTH 600
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -665,13 +665,13 @@
 #endif
 
 // O fim de curso mecânico com COM para aterrar e NC para Sinal usa "false" aqui (configuração mais comum).
-#define X_MIN_ENDSTOP_INVERTING false // Defina como verdadeiro para inverter a lógica do fim de curso.
-#define Y_MIN_ENDSTOP_INVERTING false // Defina como verdadeiro para inverter a lógica do fim de curso.
-#define Z_MIN_ENDSTOP_INVERTING false // Defina como verdadeiro para inverter a lógica do fim de curso.
-#define X_MAX_ENDSTOP_INVERTING false // Defina como verdadeiro para inverter a lógica do fim de curso.
-#define Y_MAX_ENDSTOP_INVERTING false // Defina como verdadeiro para inverter a lógica do fim de curso.
-#define Z_MAX_ENDSTOP_INVERTING false // Defina como verdadeiro para inverter a lógica do fim de curso.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Defina como verdadeiro para inverter a lógica do fim de curso.
+#define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
+#define X_MAX_ENDSTOP_INVERTING false  // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING false  // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING true // Set to true to invert the logic of the probe.
 
 /**
  * Stepper Drivers
@@ -689,17 +689,17 @@
  *          TMC5130, TMC5130_STANDALONE, TMC5160, TMC5160_STANDALONE
  * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'L6470', 'L6474', 'POWERSTEP01', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
-//#define X_DRIVER_TYPE  A4988
-//#define Y_DRIVER_TYPE  A4988
-//#define Z_DRIVER_TYPE  A4988
+#define X_DRIVER_TYPE  DRV8825
+#define Y_DRIVER_TYPE  DRV8825
+#define Z_DRIVER_TYPE  DRV8825
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
-//#define E0_DRIVER_TYPE A4988
-//#define E1_DRIVER_TYPE A4988
-//#define E2_DRIVER_TYPE A4988
+#define E0_DRIVER_TYPE A4988
+#define E1_DRIVER_TYPE A4988
+#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
 //#define E4_DRIVER_TYPE A4988
 //#define E5_DRIVER_TYPE A4988
@@ -752,18 +752,18 @@
  * Substituir com M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 88 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 600, 88 }
 
 /**
  * Taxa de alimentação máxima padrão (mm / s)
  * Substituir com M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 10, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 8, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limite a edição via M203 ou LCD para DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 800, 800, 20, 50 } // ... ou defina seus próprios limites de edição
+  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ... ou defina seus próprios limites de edição
 #endif
 
 /**
@@ -772,7 +772,7 @@
  * Substituir com M201
  * X, Y, Z, E0 [, E1 [, E2 ...] 
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 2000 }
+#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 100, 2000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limite a edição via M201 ou LCD para DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -787,10 +787,9 @@
  * Aceleração de retração M204 R
  * M204 T Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          800    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  800    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   800    // X, Y, Z acceleration for travel (non printing) moves
-
+#define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  500    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   500
 /**
  * Limites de jerk padrão (mm / s)
  * Substituir com M205 X Y Z E
@@ -873,7 +872,7 @@
  * - interruptores normalmente abertos para 5V e D32.
  *
  */
-#define Z_MIN_PROBE_PIN // Pin 32 is the RAMPS default
+//#define Z_MIN_PROBE_PIN // Pin 32 is the RAMPS default
 
 /**
  * Tipo de Sonda
@@ -887,7 +886,7 @@
   * Use G29 repetidamente, ajustando a altura Z em cada ponto com comandos de movimento
   * ou (com LCD_BED_LEVELING) o controlador LCD.
  */
-#define PROBE_MANUALLY
+//#define PROBE_MANUALLY
 //#define MANUAL_PROBE_START_Z 0.2
 
 /**
@@ -988,11 +987,11 @@
  *
  * Especifique a posição da sonda como {X, Y, Z}
  */
-#define NOZZLE_TO_PROBE_OFFSET { -30, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -30, 0, -3 }
 
 // A maioria das sondas deve ficar longe das bordas da cama, mas
 // com NOZZLE_AS_PROBE isso pode ser negativo para uma área de sondagem mais ampla.
-#define PROBING_MARGIN 20
+#define PROBING_MARGIN 40
 
 // Velocidade de deslocamento dos eixos X e Y (mm / m) entre as sondas
 #define XY_PROBE_SPEED 12000
@@ -1001,7 +1000,7 @@
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Taxa de avanço (mm / m) para a sonda "precisa" de cada ponto
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 3)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 4)
 
 /**
  * Multiple Probing
@@ -1012,8 +1011,8 @@
  * Um total de 2 faz sondagens rápidas / lentas com uma média ponderada.
  * Um total de 3 ou mais adiciona mais sondas lentas, calculando a média.
  */
-#define MULTIPLE_PROBING 2
-#define EXTRA_PROBING    1
+//#define MULTIPLE_PROBING 2
+//#define EXTRA_PROBING    1
 
 /**
  * As sondas Z requerem liberação ao implantar, guardar e mover-se entre
@@ -1029,19 +1028,19 @@
  * Exemplo: `M851 Z-5` com uma folga de 4 => 9 mm do leito ao bico.
  * Mas: `M851 Z + 1` com uma folga de 2 => 2 mm da base ao bocal.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   5 // Z Liberação para implantação / armazenamento
-#define Z_CLEARANCE_BETWEEN_PROBES  3 // Z Folga entre os pontos de sonda
-#define Z_CLEARANCE_MULTI_PROBE     3 // Z Folga entre várias sondas
+#define Z_CLEARANCE_DEPLOY_PROBE    2 // Z Liberação para implantação / armazenamento
+#define Z_CLEARANCE_BETWEEN_PROBES  2 // Z Folga entre os pontos de sonda
+#define Z_CLEARANCE_MULTI_PROBE     2 // Z Folga entre várias sondas
 //#define Z_AFTER_PROBING           5 // Posição Z após a realização da sondagem
 
-#define Z_PROBE_LOW_POINT          -1 // Distância mais distante abaixo do ponto-gatilho a percorrer antes de parar
+#define Z_PROBE_LOW_POINT          -3 // Distância mais distante abaixo do ponto-gatilho a percorrer antes de parar
 
 // Para M851 forneça uma faixa para ajustar o deslocamento da sonda Z
 #define Z_PROBE_OFFSET_RANGE_MIN -20
 #define Z_PROBE_OFFSET_RANGE_MAX 20
 
 // Ative o teste de repetibilidade M48 para testar a precisão da sonda
-#define Z_MIN_PROBE_REPEATABILITY_TEST
+//#define Z_MIN_PROBE_REPEATABILITY_TEST
 
 // Antes de implantar / guardar pausa para confirmação do usuário
 //#define PAUSE_BEFORE_DEPLOY_STOW
@@ -1061,7 +1060,7 @@
   //#define WAIT_FOR_BED_HEATER     // Espere o leito aquecer novamente entre as sondas (para melhorar a precisão)
 #endif
 #define PROBING_FANS_OFF          // Desligue os ventiladores ao sondar
-#define PROBING_STEPPERS_OFF      // Desligue os steppers (a menos que seja necessário manter a posição) durante a sondagem
+//#define PROBING_STEPPERS_OFF      // Desligue os steppers (a menos que seja necessário manter a posição) durante a sondagem
 //#define DELAY_BEFORE_PROBING 200  // (ms) Para evitar que vibrações acionem sensores piezoelétricos
 
 // Para inversão de passo de ativação de pinos (ativo baixo), use 0, não inversor (ativo alto) use 1
@@ -1095,14 +1094,14 @@
 // @section extruder
 
 // Para extrusora de acionamento direto v9 definido como verdadeiro, para extrusora com engrenagem definida como falso.
-#define INVERT_E0_DIR true
-#define INVERT_E1_DIR true
-#define INVERT_E2_DIR true
-#define INVERT_E3_DIR true
-#define INVERT_E4_DIR true
-#define INVERT_E5_DIR true
-#define INVERT_E6_DIR true
-#define INVERT_E7_DIR true
+#define INVERT_E0_DIR false
+#define INVERT_E1_DIR false
+#define INVERT_E2_DIR false
+#define INVERT_E3_DIR false
+#define INVERT_E4_DIR false
+#define INVERT_E5_DIR false
+#define INVERT_E6_DIR false
+#define INVERT_E7_DIR false
 
 // @section homing
 
@@ -1113,7 +1112,7 @@
 //#define Z_HOMING_HEIGHT  4      // (mm) Altura Z mínima antes do retorno (G28) para folga Z acima da cama, grampos, ...
                                   // Certifique-se de ter tanta folga sobre seu Z_MAX_POS para evitar moagem.
 
-//#define Z_AFTER_HOMING  10      // (mm) Altura para a qual mover após o retorno Z
+#define Z_AFTER_HOMING  5      // (mm) Altura para a qual mover após o retorno Z
 
 // Direção de paradas finais ao retornar; 1=MAX, -1=MIN
 // :[-1,1]
@@ -1128,8 +1127,8 @@
 #define Y_BED_SIZE 308
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -16
-#define Y_MIN_POS -3
+#define X_MIN_POS -3
+#define Y_MIN_POS -16
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1282,11 +1281,15 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Defina o número de pontos de grade por dimensão.
-  #define GRID_MAX_POINTS_X 4
+  #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+ // #define MIN_PROBE_EDGE_LEFT	20
+ // #define MIN_PROBE_EDGE_RIGHT	260
+ // #define MIN_PROBE_EDGE_FRONT	20
+ // #define MIN_PROBE_EDGE_BACK	260
 
   // Sondar ao longo do eixo Y, avançando X após cada coluna
-  //#define PROBE_Y_FIRST
+  #define PROBE_Y_FIRST
 
   #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
@@ -1364,7 +1367,7 @@
  * Comandos a executar no final da apalpação G29.
  * Útil para retrair ou mover a sonda Z para fora do caminho.
  */
-#define Z_PROBE_END_SCRIPT "G1 X0 Y0 Z10 F12000"
+#define Z_PROBE_END_SCRIPT "G1 X154 Y154 Z20 F12000"
 
 // @section homing
 
@@ -1524,7 +1527,7 @@
   * P1 Eleve o bocal sempre até a altura Z-park.
   * P2 Levante o bocal pela quantidade Z-park, limitada a Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Especifique uma posição de estacionamento como{ X, Y, Z_raise }
@@ -1621,7 +1624,7 @@
 * M76 - Pausar o cronômetro do trabalho de impressão
 * M77 - Pare o cronômetro do trabalho de impressão
  */
-#define PRINTJOB_TIMER_AUTOSTART
+//#define PRINTJOB_TIMER_AUTOSTART
 
 /**
 * Imprimir contador
