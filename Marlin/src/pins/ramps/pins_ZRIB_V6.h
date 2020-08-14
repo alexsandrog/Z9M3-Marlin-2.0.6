@@ -373,11 +373,11 @@ D34 ( E1_DIR_PIN )(            ) Port: C1 |                       | Port: K7 (  
 #define BEEPER_PIN                                                   -1
 #define KILL_PIN                                                     -1
 #elif ENABLED(REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER)
-#define BTN_EN2                                                      25
-#define BTN_EN1                                                      27
-#define BTN_ENC                                                      29
+#define BTN_EN2                                                      31
+#define BTN_EN1                                                      33
+#define BTN_ENC                                                      35
 #define BEEPER_PIN                                                   37
-#define KILL_PIN                                                     35
+#define KILL_PIN                                                     41
 #elif ENABLED(ZONESTAR_LCD2004_KNOB)
 #define BTN_EN1                                                      31
 #define BTN_EN2                                                      33
