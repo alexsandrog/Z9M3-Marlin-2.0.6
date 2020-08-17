@@ -13,10 +13,8 @@ Please test this firmware and let us know if it misbehaves in any way. Volunteer
 ## My version
 
 Marlin 2.0.6 firmware for Zonestar Z9SM3 3D printer with inductive SN04-N level sensor for automatic leveling, as well as many features that I can enable
-
 Running on a ZRIB V6 controller card, the ZRIB header file is from the official Zonestar patch that needed to be fixed in some places, as the way marlin names some things has changed,
-
-most of the motion configuration is identical to the example of the Marlins repository with all the bells and whistles enabled to make this Z9SM3 do everything I can
+most of the motion configuration is identical to the example of the Marlins repository with all the bells and associates enabled for Z9SM3
 
 ## Marlin 2.0.6
 
