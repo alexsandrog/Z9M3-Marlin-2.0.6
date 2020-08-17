@@ -18,7 +18,7 @@ most of the motion configuration is identical to the example of the Marlins repo
 
 ## Standard configuration marlin 2.0.6
 
-in the comfig folder of this repository
+in the comfig folder of this [repository](https://github.com/alexsandrog/ZONESTAR-Z9-Marlin-2.0.6/tree/master/config).
 
 ## Marlin 2.0.6
 
