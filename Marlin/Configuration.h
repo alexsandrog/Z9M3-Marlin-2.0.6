@@ -19,6 +19,8 @@
  * junto com este programa. Caso contrário, consulte <https://www.gnu.org/licenses/>.
  *
  */
+
+// teste 
 #pragma once
 
 /**
